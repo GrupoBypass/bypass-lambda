@@ -47,7 +47,7 @@ jobs:
       - name: Export Terraform outputs
         id: export
         run: |
-          cd terraform
+          cd terraform/transformer
           echo "transformer_ec2_public_ip=$(terraform output -raw transformer_ec2_public_ip)" >> $GITHUB_OUTPUT
 
   setup:
