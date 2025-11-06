@@ -8,7 +8,7 @@ jobs:
   provisioning:
     runs-on: ubuntu-latest
     outputs:
-      bypass_state_bucket_name: ${{ steps.export.outputs.bypass_state_bucket_name }}
+      transformer_ec2_public_ip: ${{ steps.export.outputs.transformer_ec2_public_ip }}
 
     steps:
       - name: Checkout code
