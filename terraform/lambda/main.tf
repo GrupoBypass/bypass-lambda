@@ -15,11 +15,15 @@ data "archive_file" "lambda_zip" {
   output_path = "${path.module}/lambda_function.zip"
 }
 
+data "aws_iam_role" "lab_role" {
+  name = "LabRole"
+}
+
 resource "aws_lambda_function" "lambda_function" {
   function_name = var.function_name
   filename      = data.archive_file.lambda_zip.output_path
   handler       = var.lambda_handler
-  role          = "arn:aws:iam::039590066154:role/LabRole"
+  role          = data.aws_iam_role.lab_role.arn
   runtime       = "python3.13"
 
   # Optional but recommended
