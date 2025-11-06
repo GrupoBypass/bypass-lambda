@@ -34,3 +34,7 @@ resource "aws_lambda_function" "lambda_function" {
   memory_size = 128
 }
 
+output "transformer_ec2_public_ip" {
+  value = data.terraform_remote_state.bypass_transformer.outputs.ec2_public_ip
+}
+
