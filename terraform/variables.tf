@@ -1,0 +1,15 @@
+variable "aws_region" {
+  default = "us-east-1"
+}
+
+variable "function_name" {
+  description = "Name of the Lambda function"
+  type        = string
+  default     = "bypass-lambda"
+}
+
+variable "lambda_handler" {
+  description = "Handler for the Lambda function"
+  type        = string
+  default     = "main.lambda_handler"  
+}
